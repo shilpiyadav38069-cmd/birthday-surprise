@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Surprise</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- PASSWORD SCREEN -->
+<section id="passwordScreen" class="screen active">
+
+    <div class="welcome-box">
+
+        <div class="small-title">
+            A LITTLE SURPRISE FOR YOU
+        </div>
+
+        <h1>
+            🎂 Birthday Surprise
+        </h1>
+
+        <!-- PHOTO -->
+        <div class="polaroid">
+            <img src="image/myphoto.jpg" alt="Birthday Photo">
+
+            <div class="photo-caption">
+                Someone special ❤️
+            </div>
+        </div>
+
+        <p class="secret-text">
+            Enter the secret code
+        </p>
+
+        <!-- PASSWORD DISPLAY -->
+        <div id="passwordDisplay" class="password-display">
+            <span>○</span>
+            <span>○</span>
+            <span>○</span>
+            <span>○</span>
+        </div>
+
+        <!-- KEYPAD -->
+        <div class="keypad">
+
+            <button onclick="pressNumber('1')">1</button>
+            <button onclick="pressNumber('2')">2</button>
+            <button onclick="pressNumber('3')">3</button>
+
+            <button onclick="pressNumber('4')">4</button>
+            <button onclick="pressNumber('5')">5</button>
+            <button onclick="pressNumber('6')">6</button>
+
+            <button onclick="pressNumber('7')">7</button>
+            <button onclick="pressNumber('8')">8</button>
+            <button onclick="pressNumber('9')">9</button>
+
+            <button onclick="clearPassword()">←</button>
+            <button onclick="pressNumber('0')">0</button>
+            <button onclick="checkPassword()">✓</button>
+
+        </div>
+
+        <p id="wrongPassword"></p>
+
+    </div>
+
+</section>
+
+
+    <!-- ========================= -->
+<!-- LAYER 3 - LOADING SCREEN -->
+<!-- ========================= -->
+
+<section id="loadingScreen" class="screen">
+
+    <div class="loading-content">
+
+        <div class="loading-stars">
+            ✦
+        </div>
+
+        <div class="loading-emoji">
+            🎁
+        </div>
+
+        <h1>
+            Hey, Birthday Star! ✨
+        </h1>
+
+        <p class="loading-main-text">
+            Preparing something special
+            for you...
+        </p>
+
+        <!-- LOADING BAR -->
+
+        <div class="loading-container">
+
+            <div class="loading-bar-background">
+
+                <div
+                    id="loadingBar"
+                    class="loading-bar"
+                ></div>
+
+            </div>
+
+            <div
+                id="loadingPercent"
+                class="loading-percent"
+            >
+                0%
+            </div>
+
+        </div>
+
+        <p class="loading-bottom-text">
+            Please wait... 💖
+        </p>
+
+    </div>
+
+
+    <!-- FLOATING DECORATIONS -->
+
+    <div class="floating-heart heart-1">
+        ❤️
+    </div>
+
+    <div class="floating-heart heart-2">
+        💗
+    </div>
+
+    <div class="floating-heart heart-3">
+        💕
+    </div>
+
+    <div class="floating-star star-1">
+        ✨
+    </div>
+
+    <div class="floating-star star-2">
+        ⭐
+    </div>
+
+    <div class="floating-star star-3">
+        ✦
+    </div>
+
+</section>
+
+
+    <!-- ========================= -->
+<!-- LAYER 4 - BIRTHDAY CAKE -->
+<!-- ========================= -->
+
+<section id="cakeScreen" class="screen">
+
+    <div class="cake-content">
+
+        <p class="cake-small-text">
+            A special moment for you ✨
+        </p>
+
+        <h1 class="cake-title">
+            Make a Wish 🎂
+        </h1>
+
+        <p class="cake-subtitle">
+            Close your eyes and make a beautiful wish...
+        </p>
+
+
+        <!-- CAKE -->
+
+        <div class="birthday-cake">
+
+            <!-- CANDLES -->
+
+            <div class="candles">
+
+                <div class="candle-item candle-one">
+                    <div class="flame"></div>
+                    <div class="candle-stick"></div>
+                </div>
+
+                <div class="candle-item candle-two">
+                    <div class="flame"></div>
+                    <div class="candle-stick"></div>
+                </div>
+
+                <div class="candle-item candle-three">
+                    <div class="flame"></div>
+                    <div class="candle-stick"></div>
+                </div>
+
+                <div class="candle-item candle-four">
+                    <div class="flame"></div>
+                    <div class="candle-stick"></div>
+                </div>
+
+                <div class="candle-item candle-five">
+                    <div class="flame"></div>
+                    <div class="candle-stick"></div>
+                </div>
+
+            </div>
+
+
+            <!-- CAKE TOP -->
+
+            <div class="cake-top">
+
+                <div class="cream cream-one"></div>
+                <div class="cream cream-two"></div>
+                <div class="cream cream-three"></div>
+                <div class="cream cream-four"></div>
+                <div class="cream cream-five"></div>
+
+            </div>
+
+
+            <!-- CAKE MIDDLE -->
+
+            <div class="cake-middle">
+
+                <div class="cake-decoration"></div>
+
+                <div class="cake-decoration"></div>
+
+                <div class="cake-decoration"></div>
+
+                <div class="cake-decoration"></div>
+
+                <div class="cake-decoration"></div>
+
+            </div>
+
+
+            <!-- CAKE BOTTOM -->
+
+            <div class="cake-bottom">
+
+                <div class="cake-drip drip-one"></div>
+                <div class="cake-drip drip-two"></div>
+                <div class="cake-drip drip-three"></div>
+                <div class="cake-drip drip-four"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- WISH BUTTON -->
+
+        <button
+            class="wish-button"
+            onclick="blowCandle()"
+        >
+            🕯️ Make a Wish
+        </button>
+
+    </div>
+    <!-- LAYER 5 CELEBRATION EFFECTS -->
+
+<div id="celebrationEffects">
+
+    <!-- BALLOONS -->
+
+    <div class="balloon balloon-1">
+        🎈
+    </div>
+
+    <div class="balloon balloon-2">
+        🎈
+    </div>
+
+    <div class="balloon balloon-3">
+        🎈
+    </div>
+
+    <div class="balloon balloon-4">
+        🎈
+    </div>
+
+    <div class="balloon balloon-5">
+        🎈
+    </div>
+
+
+    <!-- FLOATING HEARTS -->
+
+    <div class="celebration-heart heart-a">
+        ❤️
+    </div>
+
+    <div class="celebration-heart heart-b">
+        💕
+    </div>
+
+    <div class="celebration-heart heart-c">
+        💖
+    </div>
+
+
+    <!-- FIREWORKS -->
+
+    <div class="firework firework-1">
+        ✨
+    </div>
+
+    <div class="firework firework-2">
+        ✨
+    </div>
+
+    <div class="firework firework-3">
+        ✨
+    </div>
+
+</div>
+
+</section>
+
+
+    <section id="finalScreen" class="screen">
+
+    <div class="final-background">
+        <div class="final-particles">
+    <span>✨</span>
+    <span>✦</span>
+    <span>💖</span>
+    <span>✨</span>
+    <span>💕</span>
+    <span>⭐</span>
+    <span>✨</span>
+    <span>💗</span>
+    <span>✦</span>
+    <span>❤️</span>
+    <span>✨</span>
+    <span>⭐</span>
+</div>
+        <div class="final-glow glow-one"></div>
+        <div class="final-glow glow-two"></div>
+        <div class="final-glow glow-three"></div>
+    </div>
+
+    <div class="final-content">
+
+        <div class="final-top-text">
+            ✨ A SPECIAL WISH FOR YOU ✨
+        </div>
+
+        <h1 class="birthday-title">
+            HAPPY<br>
+            <span>BIRTHDAY</span>
+        </h1>
+
+        <div class="birthday-line"></div>
+
+        <div class="final-photo">
+            <img src="image/myphoto.jpg" alt="Birthday Photo">
+        </div>
+
+        <h2 id="birthdayName" class="birthday-name">
+            Anushka
+        </h2>
+
+        <p id="typingMessage" class="birthday-message"></p>
+
+        <div class="final-hearts">
+            ❤️ 💖 💕 💗 ❤️
+        </div>
+
+        <button class="replay-button" onclick="location.reload()">
+            🔄 Replay Surprise
+        </button>
+
+    </div>
+
+    <div class="final-sparkle sparkle-one">✨</div>
+    <div class="final-sparkle sparkle-two">⭐</div>
+    <div class="final-sparkle sparkle-three">✨</div>
+    <div class="final-sparkle sparkle-four">💖</div>
+
+</section>
+
+<audio id="birthdayMusic" loop>
+    <source src="music/happybirthday.mp3.mpeg" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
